@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 9 9 11;
+  --foreground: 250 250 250;
+  --muted: 39 39 42;
+  --muted-foreground: 161 161 170;
+  --accent: 124 58 237;
+  --accent-foreground: 250 250 250;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Markdown styling for reports */
+.prose {
+  @apply text-zinc-200 leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-2xl font-semibold text-white mt-8 mb-4 font-display;
+}
+
+.prose h2 {
+  @apply text-xl font-semibold text-white mt-6 mb-3 font-display;
+}
+
+.prose h3 {
+  @apply text-lg font-medium text-zinc-100 mt-4 mb-2;
+}
+
+.prose p {
+  @apply mb-4 text-zinc-300;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 space-y-1;
+}
+
+.prose li {
+  @apply text-zinc-300;
+}
+
+.prose strong {
+  @apply text-white font-medium;
+}
+
+.prose a {
+  @apply text-violet-400 hover:text-violet-300 underline;
+}
+
+.prose code {
+  @apply bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-violet-300;
+}
+
+.prose blockquote {
+  @apply border-l-2 border-zinc-700 pl-4 italic text-zinc-400;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(39 39 42);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(82 82 91);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(113 113 122);
+}
