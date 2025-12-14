@@ -30,6 +30,20 @@ const analysisConfig = {
     placeholder: 'Enter company or sector name',
     icon: TrendingUp,
     color: 'violet'
+  },
+  bnpl_merchant_risk: {
+    title: 'BNPL Merchant Risk',
+    description: 'BNPL-specific risk assessment: fraud, returns, chargebacks',
+    placeholder: 'Enter merchant name (e.g., Fashion Nova, Shein)',
+    icon: Search,
+    color: 'rose'
+  },
+  payment_processor_comparison: {
+    title: 'Payment Processor Comparison',
+    description: 'Compare payment processors for your business needs',
+    placeholder: 'Enter business name or "e-commerce" for general comparison',
+    icon: Search,
+    color: 'blue'
   }
 }
 
@@ -69,6 +83,20 @@ export default function InputForm({ analysisType, onSubmit, onBack, error }: Inp
       icon: 'text-violet-400',
       button: 'bg-violet-500 hover:bg-violet-400',
       ring: 'focus:ring-violet-500/20'
+    },
+    rose: {
+      bg: 'bg-rose-500/10',
+      border: 'border-rose-500/30 focus:border-rose-500/50',
+      icon: 'text-rose-400',
+      button: 'bg-rose-500 hover:bg-rose-400',
+      ring: 'focus:ring-rose-500/20'
+    },
+    blue: {
+      bg: 'bg-blue-500/10',
+      border: 'border-blue-500/30 focus:border-blue-500/50',
+      icon: 'text-blue-400',
+      button: 'bg-blue-500 hover:bg-blue-400',
+      ring: 'focus:ring-blue-500/20'
     }
   }
 

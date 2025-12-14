@@ -4,7 +4,7 @@ import InputForm from './components/InputForm'
 import ReportView from './components/ReportView'
 import LoadingState from './components/LoadingState'
 
-export type AnalysisType = 'competition' | 'due_diligence' | 'market_trends'
+export type AnalysisType = 'competition' | 'due_diligence' | 'market_trends' | 'bnpl_merchant_risk' | 'payment_processor_comparison'
 type ViewState = 'dashboard' | 'input' | 'loading' | 'report'
 
 interface Report {

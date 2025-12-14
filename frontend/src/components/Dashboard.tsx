@@ -1,4 +1,4 @@
-import { Swords, ShieldAlert, TrendingUp, Sparkles } from 'lucide-react'
+import { Swords, ShieldAlert, TrendingUp, Sparkles, CreditCard, GitCompare } from 'lucide-react'
 import type { AnalysisType } from '../App'
 
 interface DashboardProps {
@@ -38,6 +38,28 @@ const cards = [
     iconBg: 'bg-violet-500/20',
     iconColor: 'text-violet-400',
     glow: 'hover:shadow-violet-500/10'
+  },
+  {
+    type: 'bnpl_merchant_risk' as const,
+    title: 'BNPL Merchant Risk',
+    description: 'BNPL-specific risk, fraud & chargeback assessment',
+    icon: CreditCard,
+    gradient: 'from-rose-500/10 via-pink-500/10 to-red-500/10',
+    border: 'border-rose-500/20 hover:border-rose-400/40',
+    iconBg: 'bg-rose-500/20',
+    iconColor: 'text-rose-400',
+    glow: 'hover:shadow-rose-500/10'
+  },
+  {
+    type: 'payment_processor_comparison' as const,
+    title: 'Payment Processors',
+    description: 'Compare processors, pricing & integration options',
+    icon: GitCompare,
+    gradient: 'from-blue-500/10 via-cyan-500/10 to-teal-500/10',
+    border: 'border-blue-500/20 hover:border-blue-400/40',
+    iconBg: 'bg-blue-500/20',
+    iconColor: 'text-blue-400',
+    glow: 'hover:shadow-blue-500/10'
   }
 ]
 
@@ -59,7 +81,7 @@ export default function Dashboard({ onCardClick }: DashboardProps) {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
         {cards.map((card, index) => (
           <button
             key={card.type}

@@ -27,13 +27,13 @@ app.add_middleware(
 
 class AnalysisRequest(BaseModel):
     company_name: str
-    analysis_type: str  # "competition" | "due_diligence" | "market_trends"
+    analysis_type: str  # "competition" | "due_diligence" | "market_trends" | "bnpl_merchant_risk" | "payment_processor_comparison"
 
     class Config:
         json_schema_extra = {
             "example": {
                 "company_name": "Klarna",
-                "analysis_type": "competition"
+                "analysis_type": "bnpl_merchant_risk"
             }
         }
 
@@ -49,16 +49,19 @@ class AnalysisResponse(BaseModel):
 async def analyze(request: AnalysisRequest):
     """
     Run a comprehensive market intelligence analysis.
-    
+
     Analysis types:
     - competition: Competitive landscape analysis
     - due_diligence: Risk and reputation assessment
     - market_trends: Industry trends and forecasts
+    - bnpl_merchant_risk: BNPL-specific merchant risk assessment
+    - payment_processor_comparison: Payment processor comparison and recommendation
     """
-    if request.analysis_type not in ["competition", "due_diligence", "market_trends"]:
+    valid_types = ["competition", "due_diligence", "market_trends", "bnpl_merchant_risk", "payment_processor_comparison"]
+    if request.analysis_type not in valid_types:
         raise HTTPException(
             status_code=400,
-            detail="Invalid analysis_type. Must be one of: competition, due_diligence, market_trends"
+            detail=f"Invalid analysis_type. Must be one of: {', '.join(valid_types)}"
         )
     
     try:
@@ -82,10 +85,11 @@ async def analyze_stream(request: AnalysisRequest):
     Stream analysis results in real-time.
     Returns Server-Sent Events (SSE) with progress updates.
     """
-    if request.analysis_type not in ["competition", "due_diligence", "market_trends"]:
+    valid_types = ["competition", "due_diligence", "market_trends", "bnpl_merchant_risk", "payment_processor_comparison"]
+    if request.analysis_type not in valid_types:
         raise HTTPException(
             status_code=400,
-            detail="Invalid analysis_type"
+            detail=f"Invalid analysis_type. Must be one of: {', '.join(valid_types)}"
         )
     
     return StreamingResponse(

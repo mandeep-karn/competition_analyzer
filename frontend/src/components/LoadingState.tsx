@@ -26,6 +26,22 @@ const loadingMessages = {
     'Reviewing regulatory landscape...',
     'Forecasting growth patterns...',
     'Preparing trends report...'
+  ],
+  bnpl_merchant_risk: [
+    'Researching merchant background...',
+    'Analyzing chargeback and return patterns...',
+    'Scanning for fraud indicators...',
+    'Reviewing customer complaints...',
+    'Assessing BNPL-specific risks...',
+    'Compiling risk assessment report...'
+  ],
+  payment_processor_comparison: [
+    'Researching payment processors...',
+    'Comparing pricing and fees...',
+    'Analyzing integration options...',
+    'Evaluating feature sets...',
+    'Assessing fraud protection...',
+    'Preparing comparison report...'
   ]
 }
 
